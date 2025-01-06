@@ -9,4 +9,4 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
  
-DATABASE_URI = "sqlite:///truck_routes.db"
+DATABASE_URI = "sqlite:///truck_routes.db"`
