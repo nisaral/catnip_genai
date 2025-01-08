@@ -1,6 +1,6 @@
 import streamlit as st
-from app.chatbot import SalesPredictionChatbot
-from app.prompts import PROMPTS
+from appfile.chatbott import SalesPredictionChatbot
+from appfile.prompts import PROMPTS
 
 st.title("Sales Prediction Chatbot")
 st.write("Ask the chatbot about sales predictions for various products.")
