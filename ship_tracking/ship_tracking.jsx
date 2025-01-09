@@ -5,20 +5,6 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'rec
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import ShipmentOrderDetails from './ShipmentOrderDetails';
 
-
-  return (
-    <div className="w-full max-w-6xl mx-auto p-4">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Other components */}
-        <ShipmentOrderDetails />
-      </div>
-    </div>
-  );
-;
-
-
-
-
 const ShipTrackingDashboard = () => {
   // Existing state
   const [vessels, setVessels] = useState([
