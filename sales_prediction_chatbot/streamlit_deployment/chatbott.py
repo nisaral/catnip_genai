@@ -144,7 +144,7 @@ class SalesPredictionChatbot:
         #seasonal patterns
         seasons = pd.cut(pd.Series(dates.month), 
                         bins=[0, 2, 5, 8, 11, 12],
-                        labels=['Winter', 'Summer', 'Monsoon', 'Post-Monsoon', 'Winter'])
+                        labels=['Winter', 'Summer', 'Monsoon', 'Post-Monsoon',"Autumn"])
         
         # Combining festivals for both years
         festivals = {**self.get_indian_festivals(2022), **self.get_indian_festivals(2023)}

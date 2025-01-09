@@ -153,15 +153,15 @@ Consider:
 5. Supply chain constraints
 """)
 
-CUSTOMER_QUERY_TEMPLATES = {
-    "price_prediction": Template("What will be the best price for $product during $period?"),
-    "stock_recommendation": Template("How much stock of $product should we maintain for $period?"),
-    "festival_planning": Template("How should we plan inventory for $product during $festival?"),
-    "promotion_timing": Template("When is the best time to promote $product and what offers should we give?"),
-    "regional_strategy": Template("How should we adjust our strategy for $product in $region?"),
-    "competitor_response": Template("How should we position $product against $competitor_product?"),
-    "seasonal_adjustment": Template("How should we adjust pricing for $product during $season?")
-}
+#CUSTOMER_QUERY_TEMPLATES = Template("""
+  #  "price_prediction": Template("What will be the best price for $product during $period?"),
+   # "stock_recommendation": Template("How much stock of $product should we maintain for $period?"),
+   # "festival_planning": Template("How should we plan inventory for $product during $festival?"),
+   # "promotion_timing": Template("When is the best time to promote $product and what offers should we give?"),
+   # "regional_strategy": Template("How should we adjust our strategy for $product in $region?"),
+   # "competitor_response": Template("How should we position $product against $competitor_product?"),
+   # "seasonal_adjustment": Template("How should we adjust pricing for $product during $season?")
+#""")
 
 # Response templates for structured outputs
 PREDICTION_RESPONSE_TEMPLATE = Template("""
@@ -233,4 +233,14 @@ def get_festival_prompt(product_data, festival_data):
         product_details=product_data
     )
 
-# Add more prompt generation functions as needed
+PROMPTS = {
+    "system_prompt": SYSTEM_PROMPT,
+    "sales_prediction": SALES_PREDICTION_TEMPLATE,
+    "festival_specific": FESTIVAL_SPECIFIC_TEMPLATE,
+    "regional_analysis": REGIONAL_ANALYSIS_TEMPLATE,
+    "competitor_analysis": COMPETITOR_ANALYSIS_TEMPLATE,
+    "promotion_planning": PROMOTION_PLANNING_TEMPLATE,
+    "inventory_prediction": INVENTORY_PREDICTION_TEMPLATE,
+    "prediction_response": PREDICTION_RESPONSE_TEMPLATE,
+    "festival_response": FESTIVAL_RESPONSE_TEMPLATE,
+}
