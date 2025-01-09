@@ -93,7 +93,7 @@ shipment_df = pd.DataFrame(shipment_data)
 product_df = pd.DataFrame(product_data)
 
 # Specify file paths
-base_path = '/Users/krishilparikh/Desktop/SynCom-FinanceMitra/KB'   
+base_path = "Databases/Chatbot_Knowledge_base/" 
 orders_file = base_path + 'orders.csv'
 shipments_file = base_path + 'shipments.csv'
 products_file = base_path + 'products.csv'
