@@ -15,9 +15,9 @@ def embed_data(df, columns):
 
 
 def load_csvs():
-    orders_df = pd.read_csv('data/orders.csv')
-    shipments_df = pd.read_csv('data/shipments.csv')
-    products_df = pd.read_csv('data/products.csv')
+    orders_df = pd.read_csv(r'Databases\Chatbot_Knowledge_base/orders.csv')
+    shipments_df = pd.read_csv(r'Databases\Chatbot_Knowledge_base/shipments.csv')
+    products_df = pd.read_csv(r'Databases\Chatbot_Knowledge_base/products.csv')
     return orders_df, shipments_df, products_df
 
 
