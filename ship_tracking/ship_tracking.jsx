@@ -4,6 +4,7 @@ import { Anchor, Navigation, Wind, Thermometer, Clock, Ship, Bot, AlertTriangle,
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import ShipmentOrderDetails from './ShipmentOrderDetails';
+import SalesChatbot from "./saleschatbot";
 
 const ShipTrackingDashboard = () => {
   // Existing state
@@ -267,11 +268,12 @@ const ShipTrackingDashboard = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <ShipmentDetails /> {/* Replace with your Shipment Details component */}
+            <ShipmentOrderDetails /> 
+            <SalesChatbot /> 
           </CardContent>
         </Card>
       </div>
-    </div>
+    </div>  
   );
 };
-  export default ShipTrackingDashboard;  
+export default ShipTrackingDashboard;  
