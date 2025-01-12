@@ -30,7 +30,7 @@ def load_csvs():
     orders_df = pd.read_csv(r'Databases\Chatbot_Knowledge_base/orders.csv')
     shipments_df = pd.read_csv(r'Databases\Chatbot_Knowledge_base/shipments.csv')
     products_df = pd.read_csv(r'Databases\Chatbot_Knowledge_base/products.csv')
-    inventory_df = pd.read_csv('category_stock_inventory.csv')  # Load inventory for sales forecasting
+    inventory_df = pd.read_csv(r'Databases\category_stock_inventory.csv')  
     return orders_df, shipments_df, products_df, inventory_df
 
 def generate_embeddings():
