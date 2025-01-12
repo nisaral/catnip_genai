@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Anchor, Navigation, Wind, Thermometer, Clock, Ship, Bot, AlertTriangle, Sparkles } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { Bot, AlertTriangle, Sparkles, Package, Ship, Navigation } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import ShipmentOrderDetails from './ShipmentOrderDetails';
 import SalesChatbot from "./saleschatbot";
+import ShipRouteMap from './ShipRouteMap'; 
 
 const ShipTrackingDashboard = () => {
   // Existing state
@@ -65,16 +65,13 @@ const ShipTrackingDashboard = () => {
   ]);
   const [selectedVessel, setSelectedVessel] = useState(null);
   
-  // New AI-related state
+  // AI-related state
   const [aiQuery, setAiQuery] = useState('');
   const [aiResponse, setAiResponse] = useState('');
-  const [predictions, setPredictions] = useState({});
-  const [riskAlerts, setRiskAlerts] = useState([]);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
 
   // Simulated AI analysis function
   const analyzeRouteRisks = (vesselData) => {
-    // In reality, this would call your AI model
     return {
       weatherRisk: Math.random() > 0.7 ? 'high' : 'low',
       congestionRisk: Math.random() > 0.6 ? 'medium' : 'low',
@@ -87,7 +84,6 @@ const ShipTrackingDashboard = () => {
   // AI Query Handler
   const handleAiQuery = async () => {
     setIsAnalyzing(true);
-    // Simulate AI processing delay
     setTimeout(() => {
       const response = generateAiResponse(aiQuery);
       setAiResponse(response);
@@ -103,7 +99,6 @@ const ShipTrackingDashboard = () => {
       efficiency: "Route optimization analysis complete. Suggested changes: 1) Adjust speed to 14 knots to hit optimal fuel efficiency 2) Use currents at waypoint C for 5% fuel savings 3) Updated ETA: 14:30 with these optimizations.",
     };
 
-    // Simple keyword matching - in reality, would use proper NLP
     if (query.toLowerCase().includes('weather')) return responses.weather;
     if (query.toLowerCase().includes('congestion')) return responses.congestion;
     return responses.efficiency;
@@ -210,16 +205,8 @@ const ShipTrackingDashboard = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="bg-slate-100 h-96 rounded-lg relative">
-              {/* Map visualization would go here */}
-              {selectedVessel && (
-                <div className="absolute bottom-4 left-4 right-4 bg-white/90 p-4 rounded-lg">
-                  <div className="text-sm font-medium">AI Route Analysis</div>
-                  <div className="text-sm text-slate-600 mt-1">
-                    {analyzeRouteRisks(selectedVessel).optimalRoute}
-                  </div>
-                </div>
-              )}
+            <div className="h-96">
+              <ShipRouteMap /> {/* Add the ShipRouteMap component here */}
             </div>
           </CardContent>
         </Card>
@@ -268,12 +255,13 @@ const ShipTrackingDashboard = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <ShipmentOrderDetails /> 
-            <SalesChatbot /> 
+            <ShipmentOrderDetails />
+            <SalesChatbot />
           </CardContent>
         </Card>
       </div>
-    </div>  
+    </div>
   );
 };
-export default ShipTrackingDashboard;  
+
+export default ShipTrackingDashboard;
